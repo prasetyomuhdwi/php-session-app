@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "phone" => vPhone($phone),
             "password" => vPassword($password)
         );
-        header("Location: dashboard.php");
+        header("Location: ../view/dashboard.php");
         exit;
     } else {
         // 180 = 3 menit
@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } else {
             setcookie("password", vPassword($password), time() + (180), "/");
         }
-        header("Location: index.php");
+        header("Location: ../view/register.php");
         exit;
     }
 }

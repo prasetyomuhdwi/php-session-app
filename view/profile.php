@@ -5,10 +5,10 @@ if (!isset($_SESSION["user"])) {
     return http_response_code(403);;
 };
 
-if (file_exists("./asset/usr/{$_SESSION["user"]["full_name"]}.png")) {
-    $profilePic = "./asset/usr/{$_SESSION["user"]["full_name"]}.png";
+if (file_exists("../asset/usr/{$_SESSION["user"]["full_name"]}.png")) {
+    $profilePic = "../asset/usr/{$_SESSION["user"]["full_name"]}.png";
 } else {
-    $profilePic = "./asset/default.png";
+    $profilePic = "../asset/default.png";
 }
 ?>
 
@@ -24,7 +24,7 @@ if (file_exists("./asset/usr/{$_SESSION["user"]["full_name"]}.png")) {
 </head>
 
 <body>
-    <div class="w-full h-screen flex justify-center items-center bg-blue-200">
+    <div class="w-full md:h-screen flex justify-center items-center bg-blue-200">
         <div class="w-4/5">
             <div class="bg-white shadow overflow-hidden sm:rounded-lg">
                 <div class="px-4 py-5 sm:px-4">
@@ -90,7 +90,7 @@ if (file_exists("./asset/usr/{$_SESSION["user"]["full_name"]}.png")) {
                                     Foto Profil
                                 </dt>
                                 <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
-                                    <?php echo "<img src='{$profilePic}' alt='avatar' />"; ?>
+                                    <?php echo "<img class='w-64 h-64 overflow-hidden' src='{$profilePic}' alt='avatar' />"; ?>
                                 </dd>
                             </div>
                             <div class="bg-white px-2 py-1">
@@ -164,17 +164,14 @@ if (file_exists("./asset/usr/{$_SESSION["user"]["full_name"]}.png")) {
                       ease-in-out
                       duration-500
                     ">
-                                    Select
+                                    Pilih foto
                                 </div>
                             </label>
 
-                            <div class="title pt-3 text-sm text-indigo-500 uppercase">
-                                or drop files here
-                            </div>
                         </div>
                         <div id="previewImg" class="hidden">
                             <?php
-                            echo "<img src='{$profilePic}' id='profileDisplay' class='max-w-64 max-h-64' />"; ?>
+                            echo "<img src='{$profilePic}' id='profileDisplay' class='w-64 h-64 overflow-hidden' />"; ?>
                             <div class="mt-2 h-3 relative max-w-xl rounded-full overflow-hidden">
                                 <div class="w-full h-full bg-gray-200 absolute"></div>
                                 <div id="bar" class="h-full bg-green-500 relative w-0"></div>
@@ -233,7 +230,7 @@ if (file_exists("./asset/usr/{$_SESSION["user"]["full_name"]}.png")) {
             </div>
         </div>
     </div>
-    <script src="./asset/profile.js"></script>
+    <script src="../asset/profile.js"></script>
 
 </body>
 

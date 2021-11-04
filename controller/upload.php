@@ -5,7 +5,7 @@ if (!isset($_SESSION["user"])) {
     return http_response_code(403);;
 };
 
-$target_dir = "./asset/usr/";
+$target_dir = "../asset/usr/";
 $basename = basename($_FILES["profileImg"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($basename, PATHINFO_EXTENSION));
@@ -40,8 +40,11 @@ if (
 // Mengecek apakah niali $uploadOk sama dengan 0 
 // yang berarti error atau 1 yang berarti tidak ada error
 if ($uploadOk == 0) {
+
     // jika semua ok, maka akan dicoba upload file
 } else {
+
+    // jika folder tidak ada maka buat folder baru
     if (is_dir($target_dir) === false) {
         mkdir($target_dir);
     }

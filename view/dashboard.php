@@ -47,9 +47,9 @@ if (!isset($_SESSION["user"])) {
                                 ?>
                             </p>
                         </div>
-                        <a href="logout.php" tite="Logout"
+                        <a href="../controller/logout.php" tite="Logout"
                             class="w-full text-center bg-red-400 text-white hover:bg-red-500 md:col-span-5">Logout</a>
-                        <a href="profile.php" tite="Setting Profile"
+                        <a href="./profile.php" tite="Setting Profile"
                             class="w-full text-center bg-green-400 text-white hover:bg-green-500 md:col-span-5">Setting
                             Profile</a>
                     </div>
